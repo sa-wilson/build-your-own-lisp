@@ -1,0 +1,87 @@
+{
+  "v": "4.0",
+  "name": "C-GCC",
+  "workspace": {
+    "environments": [
+      {
+        "name": "cpp_gcc",
+        "machineConfigs": [
+          {
+            "limits": {
+              "ram": 2000
+            },
+            "name": "ws-machine",
+            "type": "docker",
+            "source": {
+              "location": "http://beta.codenvy.com/api/recipe/recipe1g60ul8oicoj1v8p/script",
+              "type": "recipe"
+            },
+            "dev": true,
+            "servers": [],
+            "envVariables": {},
+            "links": []
+          }
+        ]
+      }
+    ],
+    "defaultEnv": "cpp_gcc",
+    "projects": [
+      {
+        "links": [],
+        "name": "c-simple-console",
+        "attributes": {
+          "vcs.provider.name": [
+            "git"
+          ],
+          "git.current.branch.name": [
+            "master"
+          ],
+          "git.repository.remotes": [
+            "https://github.com/che-samples/c-simple-console.git"
+          ]
+        },
+        "type": "blank",
+        "source": {
+          "location": "https://github.com/che-samples/c-simple-console.git",
+          "type": "git",
+          "parameters": {}
+        },
+        "path": "/c-simple-console",
+        "problems": [],
+        "mixins": [
+          "git"
+        ]
+      }
+    ],
+    "name": "cpp_gcc",
+    "commands": [
+      {
+        "commandLine": "cd ${current.project.path} && gcc -o Hello Hello.c && ./Hello",
+        "name": "build-n-run",
+        "attributes": {
+          "previewUrl": ""
+        },
+        "type": "custom"
+      }
+    ],
+    "links": []
+  },
+  "ide": {
+    "onProjectsLoaded": {
+      "actions": [
+        {
+          "properties": {
+            "file": "/c-simple-console/Hello.c"
+          },
+          "id": "openFile"
+        },
+        {
+          "properties": {
+            "name": "build-n-run"
+          },
+          "id": "runCommand"
+        }
+      ]
+    }
+  }
+}
