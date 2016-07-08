@@ -1,7 +1,7 @@
 CC = cc
 CFLAGS = -std=c99 -Wall -g
 LDFLAGS = 
-FILES = prompt
+FILES = prompt parsing
 PLATFORM = $(shell uname)
 
 ifeq ($(findstring Linux,$(PLATFORM)),Linux)
