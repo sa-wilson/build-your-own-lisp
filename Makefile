@@ -19,3 +19,4 @@ all: $(FILES)
 
 %: %.c mpc/mpc.c
 	$(CC) $(CFLAGS) $^ $(LDFLAGS) -o $@
+
